@@ -1,18 +1,62 @@
 # DefectRisk
 
-**DefectRisk is a leakage-safe ML system for software defect-risk prioritization.**
+DefectRisk ranks software modules by estimated defect risk using static code metrics. It helps engineers prioritize human review and testing when review capacity is limited.
 
-Static code metrics help rank modules for engineering review when inspection capacity is limited. The engineering challenge is reliable defect detection under class imbalance, duplicated feature vectors and ambiguous labels—not maximizing accuracy.
+> **Review ~30% of modules → capture 71.26% of known defects**
+>
+> Historical once-only evaluation of the frozen raw RF: 652/2,177 modules flagged, 300/421 known defects captured. This is not final validation of the later calibrated system.
 
-> **On a once-only held-out evaluation, reviewing ~30% of modules captured 71.26% of known defects.**
+**How it works:** static metrics → calibrated RF → risk ranking → human review
+
+## Try it
+
+```sh
+python -m pip install -e .
+defectrisk rank examples/modules.csv
+```
+
+```text
+RANK  MODULE          RISK
+1     module_42       0.4696
+2     module_17       0.3743
+3     module_missing  0.2008
+4     module_03       0.1039
+```
+
+Real frozen-artifact inference on synthetic examples. Scores are estimated defect risk, not certainty; they do not certify modules clean or defective.
+
+**Technical credibility:**
+
+- Leakage-safe evaluation with identical feature vectors kept together.
+- Group-aware cross-validation.
+- Class imbalance handled within fitting partitions.
+- Controlled model comparison and nested tuning.
+- Calibration selected from training-only CV evidence.
+
+[Full technical case](docs/portfolio-case.md) · [Model card](docs/model-card.md) · [Data-quality article](docs/article-data-quality.md)
+
+---
+
+## CLI input and output
+
+Run from the repository root with the artifact's recorded dependencies (see reproduction below):
+
+```sh
+defectrisk rank examples/modules.csv --format json
+defectrisk rank examples/modules.csv --artifact artifacts/rf-sigmoid-v1 --format table
+```
+
+Input requires the exact ordered 21 original feature columns listed in the [model card](docs/model-card.md). One optional `module`, `module_id` or `id` column is excluded from inference; custom names use `--id-column NAME`. Without an identifier, rows receive `row_1`, etc. Blank numeric cells, `NA`, `N/A` and `NaN` use the frozen median imputer. Invalid/extra/reordered columns, nonnumeric values, infinities and empty input are rejected.
+
+JSON includes rank, module, calibrated risk probability, model version and calibration method. Results are sorted by descending probability, keeping input order for ties. Table probabilities have four decimal places; JSON retains full precision. The risk note is printed to stderr so stdout remains valid JSON. Inference verifies the existing artifact's checksums/schema, performs no training and leaves the artifact unchanged.
+
+## Historical result and product boundary
 
 ![Historical once-only held-out result](docs/figures/hero-held-out.svg)
 
-The frozen RF flagged **652 of 2,177 modules**, capturing **300 of 421 known defects**. Precision was **46.01%**, F1 **0.5592**, AP **0.6553**; **121 defects were missed**. This held-out test was evaluated once after model selection was frozen. The result belongs to the historical **raw RF**, not independent validation of the later calibrated system.
+The frozen raw RF's historical precision was **46.01%**, F1 **0.5592**, AP **0.6553**; **121 defects were missed**. This held-out test was evaluated once after model selection was frozen and was not reused for calibration or policy design.
 
 **Broader high-confidence automatic classification was not supported by the available static metrics, so the system is positioned as risk prioritization for human review.**
-
-[Model card](docs/model-card.md) · [Technical case study](docs/portfolio-case.md) · [Data-quality article](docs/article-data-quality.md)
 
 ## What this case demonstrates
 
@@ -74,7 +118,7 @@ The complete suite includes cached-JM1 integration tests and synthetic tests of 
 
 The delivered [artifact](artifacts/rf-sigmoid-v1/model.joblib) has [metadata/schema](artifacts/rf-sigmoid-v1/metadata.json), [SHA-256 checksums](artifacts/rf-sigmoid-v1/checksums.json) and [calibration audits](artifacts/rf-sigmoid-v1/calibration-audits.csv). Load only trusted local artifacts; Joblib deserialization can execute code, and checksums are not authenticity signatures. The loader checks recorded dependency versions and schema before use. Seeds do not guarantee reproducibility across different library versions/platforms.
 
-Finalization verification: **212 tests passed** in the complete suite. The delivered artifact was trained on M3 training rows only and passed checksum/schema/configuration loading checks.
+Verification: **239 tests passed** in the complete suite (212 at portfolio finalization). Real CLI inference uses the unchanged, verified frozen artifact; inference tests fail on any attempted fit or data-loader access. The artifact was trained on M3 training rows only.
 
 ## Limits and evidence trail
 

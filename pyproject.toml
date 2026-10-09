@@ -10,6 +10,9 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = ["pandas>=2.2,<4", "scikit-learn>=1.5,<2", "xgboost-cpu==3.4.1"]
 
+[project.scripts]
+defectrisk = "defectrisk.cli:main"
+
 [project.optional-dependencies]
 dev = ["pytest"]
 report = ["matplotlib>=3.9,<4"]
