@@ -1,0 +1,133 @@
+{
+  "rows": 10885,
+  "unique_feature_vectors": 8824,
+  "duplicate_full_rows_beyond_first": 1973,
+  "duplicate_feature_rows_beyond_first": 2061,
+  "duplicate_feature_groups": 669,
+  "same_label_duplicate_groups": 581,
+  "conflicting_label_duplicate_groups": 88,
+  "conflicting_examples": [
+    {
+      "features": {
+        "loc": 24.0,
+        "v(g)": 2.0,
+        "ev(g)": 1.0,
+        "iv(g)": 2.0,
+        "n": 0.0,
+        "v": 0.0,
+        "l": 0.0,
+        "d": 0.0,
+        "i": 0.0,
+        "e": 0.0,
+        "b": 0.0,
+        "t": 0.0,
+        "lOCode": 0.0,
+        "lOComment": 0.0,
+        "lOBlank": 0.0,
+        "locCodeAndComment": 0.0,
+        "uniq_Op": 0.0,
+        "uniq_Opnd": 0.0,
+        "total_Op": 0.0,
+        "total_Opnd": 0.0,
+        "branchCount": 3.0
+      },
+      "row_indices": [
+        8,
+        4999,
+        5002
+      ],
+      "target_counts": {
+        "false": 2,
+        "true": 1
+      }
+    },
+    {
+      "features": {
+        "loc": 8.0,
+        "v(g)": 1.0,
+        "ev(g)": 1.0,
+        "iv(g)": 1.0,
+        "n": 14.0,
+        "v": 46.51,
+        "l": 0.33,
+        "d": 3.0,
+        "i": 15.5,
+        "e": 139.52,
+        "b": 0.02,
+        "t": 7.75,
+        "lOCode": 4.0,
+        "lOComment": 0.0,
+        "lOBlank": 2.0,
+        "locCodeAndComment": 0.0,
+        "uniq_Op": 5.0,
+        "uniq_Opnd": 5.0,
+        "total_Op": 8.0,
+        "total_Opnd": 6.0,
+        "branchCount": 1.0
+      },
+      "row_indices": [
+        60,
+        3172
+      ],
+      "target_counts": {
+        "false": 1,
+        "true": 1
+      }
+    },
+    {
+      "features": {
+        "loc": 20.0,
+        "v(g)": 1.0,
+        "ev(g)": 1.0,
+        "iv(g)": 1.0,
+        "n": 0.0,
+        "v": 0.0,
+        "l": 0.0,
+        "d": 0.0,
+        "i": 0.0,
+        "e": 0.0,
+        "b": 0.0,
+        "t": 0.0,
+        "lOCode": 0.0,
+        "lOComment": 0.0,
+        "lOBlank": 0.0,
+        "locCodeAndComment": 0.0,
+        "uniq_Op": 0.0,
+        "uniq_Opnd": 0.0,
+        "total_Op": 0.0,
+        "total_Opnd": 0.0,
+        "branchCount": 1.0
+      },
+      "row_indices": [
+        74,
+        1086,
+        1311,
+        1657,
+        4240,
+        8398
+      ],
+      "target_counts": {
+        "true": 4,
+        "false": 2
+      }
+    }
+  ],
+  "partition_rows": {
+    "train": 8708,
+    "test": 2177,
+    "fit": 6966,
+    "validation": 1742
+  },
+  "train_test_overlap": {
+    "shared_feature_vectors": 0,
+    "left_rows_with_match": 0,
+    "right_rows_with_match": 0,
+    "matching_row_pairs": 0
+  },
+  "fit_validation_overlap": {
+    "shared_feature_vectors": 0,
+    "left_rows_with_match": 0,
+    "right_rows_with_match": 0,
+    "matching_row_pairs": 0
+  }
+}

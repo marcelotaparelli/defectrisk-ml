@@ -1,0 +1,44 @@
+{
+  "sources": {
+    "docs/tree-model-tuning-results/oof-probabilities.csv": "0a852fbbf25fbbeb6356aaee84898cd9d60427d2d15847b031da5db75a740bd2",
+    "docs/final-model-challenge-results/oof-probabilities.csv": "69680315c9c6ad82770c7a809edf0998148fcbf0d5ddc92ebfcf4e74bf87f29a"
+  },
+  "training_rows": 8708,
+  "training_defective": 1685,
+  "new_model_fits": 0,
+  "final_test_access": false,
+  "candidate_definitions": {
+    "average_three": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "rf_hgb": [
+      0.5,
+      0.5,
+      0
+    ],
+    "rf_xgb": [
+      0.5,
+      0,
+      0.5
+    ],
+    "hgb_xgb": [
+      0,
+      0.5,
+      0.5
+    ],
+    "rf_50_hgb_25_xgb_25": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "rf_60_hgb_20_xgb_20": [
+      0.6,
+      0.2,
+      0.2
+    ]
+  },
+  "xgboost_variant": "Full original-feature nested candidate; b ablation is not selected",
+  "meaningful_rule": "Recall gain >= .02 OR >=30 additional defects; AP >= RF; review within .5 points of 30% and RF"
+}

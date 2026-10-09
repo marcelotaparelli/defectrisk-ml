@@ -1,0 +1,6 @@
+,outer_fold,calibration_method,low_threshold,high_threshold
+0,1,sigmoid,,
+1,2,sigmoid,0.0706091445624668,
+2,3,sigmoid,,
+3,4,sigmoid,0.060494729177310164,
+4,5,sigmoid,0.07127896021125263,

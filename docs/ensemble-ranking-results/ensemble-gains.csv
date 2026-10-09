@@ -1,0 +1,7 @@
+,ensemble,new_defects_vs_rf,rf_defects_lost,new_caught_by_other_base
+0,average_three,54,59,54
+1,rf_hgb,50,43,50
+2,rf_xgb,43,51,43
+3,hgb_xgb,75,87,75
+4,rf_50_hgb_25_xgb_25,45,44,45
+5,rf_60_hgb_20_xgb_20,35,36,35

@@ -1,0 +1,24 @@
+Train/Test Split — group-aware, test_size=0.20, random_state=42
+Groups: all raw feature columns, excluding target; approximate class balance
+Full dataset size: 10,885
+Train size: 8,708
+Test size: 2,177
+Shared feature vectors (train/test): 0
+
+Full class distribution:
+         count  percent
+defects                
+false     8779    80.65
+true      2106    19.35
+
+Train class distribution:
+         count  percent
+defects                
+false     7023    80.65
+true      1685    19.35
+
+Test class distribution:
+         count  percent
+defects                
+false     1756    80.66
+true       421    19.34

@@ -1,0 +1,45 @@
+Controlled Logistic Regression experiment: baseline vs class_weight='balanced'
+Same 5-fold StratifiedGroupKFold: shuffle=True, random_state=42
+M3 training rows: 8,708; positive class='true' (defective)
+Per-fold metrics, raw-feature overlap audit, and confusion counts:
+               fit_rows  validation_rows  fit_defective  validation_defective  shared_feature_vectors  left_rows_with_match  right_rows_with_match  matching_row_pairs  accuracy  precision  recall     f1    tn   fp   fn   tp
+model    fold                                                                                                                                                                                                                  
+baseline 1         6966             1742           1348                   337                       0                     0                      0                   0    0.8020     0.4286  0.0712 0.1221  1373   32  313   24
+balanced 1         6966             1742           1348                   337                       0                     0                      0                   0    0.7210     0.3586  0.5608 0.4375  1067  338  148  189
+baseline 2         6967             1741           1348                   337                       0                     0                      0                   0    0.8191     0.6667  0.1306 0.2184  1382   22  293   44
+balanced 2         6967             1741           1348                   337                       0                     0                      0                   0    0.7186     0.3596  0.5816 0.4444  1055  349  141  196
+baseline 3         6967             1741           1348                   337                       0                     0                      0                   0    0.8139     0.5942  0.1217 0.2020  1376   28  296   41
+balanced 3         6967             1741           1348                   337                       0                     0                      0                   0    0.7105     0.3372  0.5134 0.4071  1064  340  164  173
+baseline 4         6965             1743           1348                   337                       0                     0                      0                   0    0.8084     0.5246  0.0950 0.1608  1377   29  305   32
+balanced 4         6965             1743           1348                   337                       0                     0                      0                   0    0.7114     0.3398  0.5223 0.4117  1064  342  161  176
+baseline 5         6967             1741           1348                   337                       0                     0                      0                   0    0.8110     0.5714  0.0950 0.1628  1380   24  305   32
+balanced 5         6967             1741           1348                   337                       0                     0                      0                   0    0.7163     0.3421  0.5045 0.4077  1077  327  167  170
+Unweighted means and population standard deviations (ddof=0):
+                     mean    std
+model    metric                 
+baseline accuracy  0.8109 0.0057
+         precision 0.5571 0.0789
+         recall    0.1027 0.0212
+         f1        0.1732 0.0339
+balanced accuracy  0.7155 0.0040
+         precision 0.3475 0.0097
+         recall    0.5365 0.0296
+         f1        0.4217 0.0160
+Mean changes (balanced minus baseline):
+metric
+accuracy    -0.0953
+precision   -0.2096
+recall      +0.4338
+f1          +0.2484
+baseline aggregated cross-validation confusion matrix ([[TN, FP], [FN, TP]]):
+                  predicted clean  predicted defective
+actual clean                 6888                  135
+actual defective             1512                  173
+balanced aggregated cross-validation confusion matrix ([[TN, FP], [FN, TP]]):
+                  predicted clean  predicted defective
+actual clean                 5327                 1696
+actual defective              781                  904
+Each M3 training row contributes one held-out prediction per model.
+Undefined precision/recall/F1 are reported as 0 (zero_division=0).
+Only class_weight differs. No resampling or classification-threshold change.
+The final test partition was not passed to the experiment, fitted, or scored.

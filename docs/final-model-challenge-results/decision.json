@@ -1,0 +1,10 @@
+{
+  "selected_model": "tuned_weighted_random_forest",
+  "recall_gain": -0.016023738872403603,
+  "additional_defects_caught": -27,
+  "ap_change": 0.00019761322244210566,
+  "comparable_workload": true,
+  "ap_not_worse": true,
+  "material_improvement": false,
+  "model_exploration_finished": true
+}

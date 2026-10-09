@@ -1,0 +1,25 @@
+Threshold measurement — balanced Logistic Regression, M3 training only
+Same 5-fold StratifiedGroupKFold: shuffle=True, random_state=42
+Exactly five pipeline fits and five validation predict_proba calls; no per-threshold retraining
+M3 training rows: 8,708; positive class='true' (defective)
+Fold integrity audits:
+      fit_rows  validation_rows  fit_defective  validation_defective  shared_feature_vectors  left_rows_with_match  right_rows_with_match  matching_row_pairs
+fold                                                                                                                                                         
+1         6966             1742           1348                   337                       0                     0                      0                   0
+2         6967             1741           1348                   337                       0                     0                      0                   0
+3         6967             1741           1348                   337                       0                     0                      0                   0
+4         6965             1743           1348                   337                       0                     0                      0                   0
+5         6967             1741           1348                   337                       0                     0                      0                   0
+Pooled out-of-fold results; predict defective when P(defective) >= threshold:
+           precision  recall     f1  accuracy    tp    fp    tn    fn  flagged_modules  flagged_percent
+threshold                                                                                              
+0.2           0.1933  0.9970 0.3239    0.1944  1680  7010    13     5             8690          99.7933
+0.3           0.2030  0.9638 0.3354    0.2609  1624  6375   648    61             7999          91.8581
+0.4           0.2605  0.7881 0.3916    0.5262  1328  3769  3254   357             5097          58.5324
+0.5           0.3477  0.5365 0.4219    0.7155   904  1696  5327   781             2600          29.8576
+0.6           0.4366  0.3596 0.3944    0.7863   606   782  6241  1079             1388          15.9394
+0.7           0.4993  0.2255 0.3107    0.8064   380   381  6642  1305              761           8.7391
+0.8           0.5489  0.1300 0.2102    0.8110   219   180  6843  1466              399           4.5820
+Undefined precision/recall/F1 are reported as 0 (zero_division=0).
+No default threshold is changed or automatically selected.
+The final test outputs were discarded; not inspected, fitted, predicted, or scored.

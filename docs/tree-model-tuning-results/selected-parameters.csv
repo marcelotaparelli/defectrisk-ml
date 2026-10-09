@@ -1,0 +1,11 @@
+,outer_fold,model,parameters
+0,1,tuned_weighted_random_forest,"{'class_weight': 'balanced', 'max_depth': 8, 'max_features': 0.7, 'min_samples_leaf': 1, 'n_estimators': 200}"
+1,1,tuned_hist_gradient_boosting,"{'l2_regularization': 0.0, 'learning_rate': 0.03, 'max_iter': 100, 'max_leaf_nodes': 15, 'min_samples_leaf': 10}"
+2,2,tuned_weighted_random_forest,"{'class_weight': 'balanced_subsample', 'max_depth': 8, 'max_features': 'sqrt', 'min_samples_leaf': 3, 'n_estimators': 200}"
+3,2,tuned_hist_gradient_boosting,"{'l2_regularization': 0.0, 'learning_rate': 0.03, 'max_iter': 100, 'max_leaf_nodes': 15, 'min_samples_leaf': 10}"
+4,3,tuned_weighted_random_forest,"{'class_weight': 'balanced', 'max_depth': 16, 'max_features': 'sqrt', 'min_samples_leaf': 5, 'n_estimators': 200}"
+5,3,tuned_hist_gradient_boosting,"{'l2_regularization': 0.0, 'learning_rate': 0.03, 'max_iter': 100, 'max_leaf_nodes': 15, 'min_samples_leaf': 10}"
+6,4,tuned_weighted_random_forest,"{'class_weight': 'balanced', 'max_depth': None, 'max_features': 0.7, 'min_samples_leaf': 5, 'n_estimators': 200}"
+7,4,tuned_hist_gradient_boosting,"{'l2_regularization': 0.0, 'learning_rate': 0.03, 'max_iter': 100, 'max_leaf_nodes': 15, 'min_samples_leaf': 10}"
+8,5,tuned_weighted_random_forest,"{'class_weight': 'balanced_subsample', 'max_depth': 8, 'max_features': 'sqrt', 'min_samples_leaf': 3, 'n_estimators': 200}"
+9,5,tuned_hist_gradient_boosting,"{'l2_regularization': 0.0, 'learning_rate': 0.03, 'max_iter': 100, 'max_leaf_nodes': 15, 'min_samples_leaf': 10}"

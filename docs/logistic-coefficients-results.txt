@@ -1,0 +1,35 @@
+Balanced Logistic Regression parameters — full M3 training fit only
+random_state=42, max_iter=5000, class_weight='balanced', C=1.0
+Pipeline: median imputer -> StandardScaler -> LogisticRegression
+M3 training rows: 8,708; coefficients: 21
+Coefficients act on standardized imputed features; positive class='true' (defective)
+Learned intercept (standardized feature space): -0.108591198
+Features sorted by absolute coefficient magnitude:
+          feature  coefficient  absolute_coefficient        direction
+                n  1.816471194           1.816471194 toward defective
+              loc  1.409048581           1.409048581 toward defective
+                v -1.261695159           1.261695159     toward clean
+       total_Opnd -1.194517991           1.194517991     toward clean
+      branchCount  0.978422001           0.978422001 toward defective
+             v(g) -0.762273712           0.762273712     toward clean
+           lOCode -0.741808538           0.741808538     toward clean
+                b  0.620130938           0.620130938 toward defective
+         total_Op -0.545243166           0.545243166     toward clean
+        uniq_Opnd  0.441711456           0.441711456 toward defective
+          uniq_Op  0.275589771           0.275589771 toward defective
+                d -0.169970104           0.169970104     toward clean
+                i  0.145417763           0.145417763 toward defective
+        lOComment -0.131648327           0.131648327     toward clean
+            ev(g) -0.106952843           0.106952843     toward clean
+locCodeAndComment  0.086043639           0.086043639 toward defective
+                l -0.083741552           0.083741552     toward clean
+          lOBlank  0.053592521           0.053592521 toward defective
+                e -0.007166472           0.007166472     toward clean
+                t -0.007114989           0.007114989     toward clean
+            iv(g)  0.002538492           0.002538492 toward defective
+Positive means increasing that standardized feature pushes toward defective, holding others fixed.
+Negative means increasing that standardized feature pushes toward clean, holding others fixed.
+StandardScaler makes magnitudes more comparable across features than raw-scale coefficients.
+Coefficient importance is NOT causality; correlated features can make individual coefficients unstable.
+No predictions, scoring, tuning, or model promotion were performed in this analysis.
+Final test outputs discarded; not inspected, fitted, predicted, or scored.

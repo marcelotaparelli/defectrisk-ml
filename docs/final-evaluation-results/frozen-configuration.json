@@ -1,0 +1,93 @@
+{
+  "frozen_at_utc": "2026-10-09T18:53:47.810872+00:00",
+  "model": "RandomForestClassifier",
+  "selection": {
+    "rule": "Most frequent existing inner-CV winner; ties use earliest fold",
+    "selected_in_folds": 2,
+    "total_folds": 5,
+    "source": "docs/final-model-challenge-results/selected-parameters.csv",
+    "new_searches": 0
+  },
+  "classifier_parameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": "balanced_subsample",
+    "criterion": "gini",
+    "max_depth": 8,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 3,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 200,
+    "n_jobs": null,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "preprocessing": {
+    "imputer": {
+      "add_indicator": false,
+      "copy": true,
+      "fill_value": null,
+      "keep_empty_features": false,
+      "missing_values": "NaN",
+      "strategy": "median"
+    },
+    "scaler": {
+      "copy": true,
+      "with_mean": true,
+      "with_std": true
+    }
+  },
+  "feature_columns": [
+    "loc",
+    "v(g)",
+    "ev(g)",
+    "iv(g)",
+    "n",
+    "v",
+    "l",
+    "d",
+    "i",
+    "e",
+    "b",
+    "t",
+    "lOCode",
+    "lOComment",
+    "lOBlank",
+    "locCodeAndComment",
+    "uniq_Op",
+    "uniq_Opnd",
+    "total_Op",
+    "total_Opnd",
+    "branchCount"
+  ],
+  "target": "defects",
+  "positive_class": "true",
+  "training": {
+    "definition": "Complete unchanged M3 group-aware 80/20 training partition of OpenML 1053 version 1; all rows retained",
+    "rows": 8708,
+    "defective": 1685,
+    "clean": 7023,
+    "sha256": "ad488942d1d0ee2a4aeb61dc30c811553930f4e6c262b29aadd09bc276a27e05",
+    "split_random_state": 42,
+    "test_size": 0.2,
+    "groups": "All original feature columns; excludes target"
+  },
+  "review_policy": {
+    "capacity": 0.3,
+    "rule": "Rank by P(true); choose closest attainable flagged count; retain all equal scores; distance ties prefer fewer reviews",
+    "threshold_uses_labels": false,
+    "comparison": "probability >= chosen score cutoff"
+  },
+  "versions": {
+    "sklearn": "1.9.1",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3"
+  }
+}

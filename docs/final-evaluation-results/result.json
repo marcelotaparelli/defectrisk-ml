@@ -1,0 +1,27 @@
+{
+  "evaluated_at_utc": "2026-10-09T18:55:32.513027+00:00",
+  "test_rows": 2177,
+  "test_defective": 421,
+  "review_cutoff": 0.29795885923354354,
+  "precision": 0.4601226993865031,
+  "recall": 0.7125890736342043,
+  "f1": 0.5591798695246971,
+  "accuracy": 0.7827285254937988,
+  "tp": 300.0,
+  "fp": 352.0,
+  "tn": 1404.0,
+  "fn": 121.0,
+  "flagged_modules": 652.0,
+  "flagged_percent": 29.949471750114835,
+  "average_precision": 0.6553201105792682,
+  "overlap": {
+    "shared_feature_vectors": 0,
+    "left_rows_with_match": 0,
+    "right_rows_with_match": 0,
+    "matching_row_pairs": 0
+  },
+  "full_training_fits": 1,
+  "test_predict_proba_calls": 1,
+  "statement": "This held-out test was evaluated once after model selection was frozen.",
+  "frozen_configuration_sha256": "aa41cb25142bc599c56083e77db57a2f12521ae504ef19149ca32510cf3e39b4"
+}

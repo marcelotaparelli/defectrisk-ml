@@ -1,0 +1,2 @@
+,low_count,high_count,auto_count,uncertain_count,high_tp,high_fp,low_false_negatives,uncertain_defects,coverage_percent,uncertain_percent,high_percent,high_precision,high_recall,low_defect_rate,auto_error_rate
+0,136,0,136,8572,0,0,7,1678,1.5617822691777676,98.43821773082223,0.0,,0.0,0.051470588235294115,0.051470588235294115

@@ -1,0 +1,6 @@
+fold,fit_rows,validation_rows,fit_defective,validation_defective,shared_feature_vectors,left_rows_with_match,right_rows_with_match,matching_row_pairs
+1,6966,1742,1348,337,0,0,0,0
+2,6967,1741,1348,337,0,0,0,0
+3,6967,1741,1348,337,0,0,0,0
+4,6965,1743,1348,337,0,0,0,0
+5,6967,1741,1348,337,0,0,0,0

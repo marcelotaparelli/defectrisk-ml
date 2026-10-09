@@ -1,0 +1,227 @@
+{
+  "model_version": "defectrisk-rf-sigmoid-v1",
+  "model_name": "weighted_random_forest",
+  "purpose": "Risk ranking and human review prioritization; probability is not certainty",
+  "classifier_parameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": "balanced_subsample",
+    "criterion": "gini",
+    "max_depth": 8,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 3,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 200,
+    "n_jobs": null,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "preprocessing": {
+    "imputer": {
+      "add_indicator": false,
+      "copy": true,
+      "fill_value": null,
+      "keep_empty_features": false,
+      "missing_values": "nan",
+      "strategy": "median"
+    },
+    "scaler": {
+      "copy": true,
+      "with_mean": true,
+      "with_std": true
+    }
+  },
+  "feature_schema": [
+    {
+      "name": "loc",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "v(g)",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "ev(g)",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "iv(g)",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "n",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "v",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "l",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "d",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "i",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "e",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "b",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "t",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "lOCode",
+      "dtype": "int64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "lOComment",
+      "dtype": "int64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "lOBlank",
+      "dtype": "int64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "locCodeAndComment",
+      "dtype": "int64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "uniq_Op",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "uniq_Opnd",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "total_Op",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "total_Opnd",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    },
+    {
+      "name": "branchCount",
+      "dtype": "float64",
+      "kind": "numeric",
+      "nullable": true
+    }
+  ],
+  "target": {
+    "name": "defects",
+    "positive": "true",
+    "negative": "false"
+  },
+  "calibration": {
+    "method": "sigmoid",
+    "fit_scores": "3-fold stratified group-aware OOF, training only",
+    "n_splits": 3,
+    "shuffle": true,
+    "random_state": 42,
+    "class_weight": null,
+    "parameters": {
+      "C": "inf",
+      "class_weight": null,
+      "dual": false,
+      "fit_intercept": true,
+      "intercept_scaling": 1,
+      "l1_ratio": 0.0,
+      "max_iter": 5000,
+      "n_jobs": null,
+      "penalty": "deprecated",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "slope": 4.862592413639122,
+    "intercept": -3.5637841586080117
+  },
+  "training": {
+    "dataset": "OpenML 1053 / JM1 version 1",
+    "definition": "Complete existing M3 training partition; original raw feature groups; all rows retained",
+    "rows": 8708,
+    "defective": 1685,
+    "clean": 7023,
+    "sha256": "ad488942d1d0ee2a4aeb61dc30c811553930f4e6c262b29aadd09bc276a27e05",
+    "training_oof_source_sha256": "294a2572f87a64faae280b56b0569ffad2f66a1c16a5e0a4c83f3bfe8918b217",
+    "final_test_access": false
+  },
+  "review_policy": {
+    "capacity": 0.3,
+    "rule": "closest attainable count; keep score ties; distance ties prefer fewer",
+    "uses_labels": false,
+    "automatic_high_precision_policy_enabled": false
+  },
+  "dependencies": {
+    "python": "3.14.8",
+    "defectrisk-ml": "0.1.0",
+    "scikit-learn": "1.9.1",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.7.0"
+  },
+  "validation_status": "Training-only calibration CV; external once-only holdout still required"
+}

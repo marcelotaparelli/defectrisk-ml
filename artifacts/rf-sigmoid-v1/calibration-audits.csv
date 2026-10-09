@@ -1,0 +1,4 @@
+level,outer_fold,fold,fit_rows,validation_rows,shared_feature_vectors,left_rows_with_match,right_rows_with_match,matching_row_pairs
+final-training-calibration,0,1,5806,2902,0,0,0,0
+final-training-calibration,0,2,5805,2903,0,0,0,0
+final-training-calibration,0,3,5805,2903,0,0,0,0

@@ -1,0 +1,8 @@
+{
+  "training_rows": 8708,
+  "conflicting_groups_in_training": 11,
+  "rows_in_conflicting_training_groups": 22,
+  "clean_rows_in_conflicting_groups": 11,
+  "defective_rows_in_conflicting_groups": 11,
+  "minimum_row_errors_for_identical_vector_predictions": 11
+}

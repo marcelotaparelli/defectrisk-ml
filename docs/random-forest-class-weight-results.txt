@@ -1,0 +1,85 @@
+Controlled Random Forest class-weight experiment, with balanced LR reference
+Identical five StratifiedGroupKFold folds: shuffle=True, random_state=42
+All models: P(defective) >= 0.50; positive class='true'
+M3 training rows: 8,708
+Fold integrity audits:
+      fit_rows  validation_rows  fit_defective  validation_defective  shared_feature_vectors  left_rows_with_match  right_rows_with_match  matching_row_pairs
+fold                                                                                                                                                         
+1         6966             1742           1348                   337                       0                     0                      0                   0
+2         6967             1741           1348                   337                       0                     0                      0                   0
+3         6967             1741           1348                   337                       0                     0                      0                   0
+4         6965             1743           1348                   337                       0                     0                      0                   0
+5         6967             1741           1348                   337                       0                     0                      0                   0
+Per-fold metrics, confusion counts, and review workload:
+                                   precision  recall     f1  accuracy       tp       fp        tn       fn  flagged_modules  flagged_percent
+model                        fold                                                                                                           
+balanced_logistic_regression 1        0.3586  0.5608 0.4375    0.7210 189.0000 338.0000 1067.0000 148.0000         527.0000          30.2526
+random_forest                1        0.5000  0.2077 0.2935    0.8065  70.0000  70.0000 1335.0000 267.0000         140.0000           8.0367
+weighted_random_forest       1        0.3871  0.3917 0.3894    0.7623 132.0000 209.0000 1196.0000 205.0000         341.0000          19.5752
+balanced_logistic_regression 2        0.3596  0.5816 0.4444    0.7186 196.0000 349.0000 1055.0000 141.0000         545.0000          31.3038
+random_forest                2        0.5920  0.2196 0.3203    0.8196  74.0000  51.0000 1353.0000 263.0000         125.0000           7.1798
+weighted_random_forest       2        0.4581  0.4540 0.4560    0.7904 153.0000 181.0000 1223.0000 184.0000         334.0000          19.1844
+balanced_logistic_regression 3        0.3372  0.5134 0.4071    0.7105 173.0000 340.0000 1064.0000 164.0000         513.0000          29.4658
+random_forest                3        0.4393  0.1395 0.2117    0.7990  47.0000  60.0000 1344.0000 290.0000         107.0000           6.1459
+weighted_random_forest       3        0.4348  0.3858 0.4088    0.7840 130.0000 169.0000 1235.0000 207.0000         299.0000          17.1740
+balanced_logistic_regression 4        0.3398  0.5223 0.4117    0.7114 176.0000 342.0000 1064.0000 161.0000         518.0000          29.7189
+random_forest                4        0.5159  0.1929 0.2808    0.8090  65.0000  61.0000 1345.0000 272.0000         126.0000           7.2289
+weighted_random_forest       4        0.4444  0.3917 0.4164    0.7877 132.0000 165.0000 1241.0000 205.0000         297.0000          17.0396
+balanced_logistic_regression 5        0.3421  0.5045 0.4077    0.7163 170.0000 327.0000 1077.0000 167.0000         497.0000          28.5468
+random_forest                5        0.5133  0.1721 0.2578    0.8082  58.0000  55.0000 1349.0000 279.0000         113.0000           6.4905
+weighted_random_forest       5        0.3891  0.3175 0.3497    0.7714 107.0000 168.0000 1236.0000 230.0000         275.0000          15.7955
+Unweighted means and population standard deviations (ddof=0):
+                                                  mean     std
+model                        metric                           
+balanced_logistic_regression precision          0.3475  0.0097
+                             recall             0.5365  0.0296
+                             f1                 0.4217  0.0160
+                             accuracy           0.7155  0.0040
+                             tp               180.8000  9.9880
+                             fp               339.2000  7.1386
+                             tn              1065.4000  7.0597
+                             fn               156.2000  9.9880
+                             flagged_modules  520.0000 15.8493
+                             flagged_percent   29.8576  0.9098
+random_forest                precision          0.5121  0.0487
+                             recall             0.1864  0.0283
+                             f1                 0.2728  0.0366
+                             accuracy           0.8085  0.0066
+                             tp                62.8000  9.5373
+                             fp                59.4000  6.4062
+                             tn              1345.2000  6.0133
+                             fn               274.2000  9.5373
+                             flagged_modules  122.2000 11.4438
+                             flagged_percent    7.0164  0.6553
+weighted_random_forest       precision          0.4227  0.0292
+                             recall             0.3881  0.0433
+                             f1                 0.4041  0.0348
+                             accuracy           0.7792  0.0106
+                             tp               130.8000 14.5794
+                             fp               178.4000 16.2432
+                             tn              1226.2000 16.2160
+                             fn               206.2000 14.5794
+                             flagged_modules  309.2000 24.6933
+                             flagged_percent   17.7537  1.4174
+Mean changes (weighted forest minus default forest):
+metric
+precision           -0.0894
+recall              +0.2018
+f1                  +0.1312
+accuracy            -0.0293
+tp                 +68.0000
+fp                +119.0000
+tn                -119.0000
+fn                 -68.0000
+flagged_modules   +187.0000
+flagged_percent    +10.7374
+Pooled out-of-fold metrics, confusion counts, and review workload:
+                              precision  recall     f1  accuracy   tp    fp    tn    fn  flagged_modules  flagged_percent
+model                                                                                                                    
+balanced_logistic_regression     0.3477  0.5365 0.4219    0.7155  904  1696  5327   781             2600          29.8576
+random_forest                    0.5139  0.1864 0.2735    0.8085  314   297  6726  1371              611           7.0165
+weighted_random_forest           0.4230  0.3881 0.4048    0.7792  654   892  6131  1031             1546          17.7538
+Undefined precision/recall/F1 are reported as 0 (zero_division=0).
+Only forest class_weight changes; LR, preprocessing, thresholds, and folds are unchanged.
+No external resampling, other parameter tuning, or model promotion.
+Final test outputs discarded; not inspected, fitted, predicted, or scored.

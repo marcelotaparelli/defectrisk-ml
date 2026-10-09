@@ -1,0 +1,5 @@
+,formula,observed_rows,within_rounding_rows,rounding_tolerance,max_absolute_error
+0,b vs v/3000,8708,8700,0.0051,1.2995666666666668
+1,b vs e^(2/3)/3000,8708,1921,0.0051,8.165539370203026
+2,t vs e/18,8708,8627,0.0051,1.2277777777777779
+3,n vs total_Op + total_Opnd,8703,8569,0.0001,482.0

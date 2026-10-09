@@ -1,0 +1,29 @@
+Balanced Logistic Regression — group-aware GridSearchCV, C only
+5-fold StratifiedGroupKFold: shuffle=True, random_state=42; groups passed explicitly
+Fixed class_weight='balanced', threshold=0.50, median imputer and StandardScaler
+M3 training rows: 8,708; positive class='true' (defective)
+Audited folds (verified identical to existing trusted CV folds):
+      fit_rows  validation_rows  fit_defective  validation_defective  shared_feature_vectors  left_rows_with_match  right_rows_with_match  matching_row_pairs
+fold                                                                                                                                                         
+1         6966             1742           1348                   337                       0                     0                      0                   0
+2         6967             1741           1348                   337                       0                     0                      0                   0
+3         6967             1741           1348                   337                       0                     0                      0                   0
+4         6965             1743           1348                   337                       0                     0                      0                   0
+5         6967             1741           1348                   337                       0                     0                      0                   0
+Equal-fold means and population standard deviations (ddof=0):
+        mean_accuracy  std_accuracy  mean_precision  std_precision  mean_recall  std_recall  mean_f1   std_f1  rank_f1
+C                                                                                                                     
+0.01         0.718305      0.005959        0.348482       0.010969     0.524629    0.024713 0.418722 0.015176        5
+0.10         0.719224      0.006313        0.351317       0.013176     0.534125    0.031738 0.423779 0.019276        1
+1.00         0.715549      0.004045        0.347464       0.009655     0.536499    0.029638 0.421675 0.015988        3
+10.00        0.713368      0.006054        0.345817       0.011560     0.540653    0.030226 0.421729 0.017172        2
+100.00       0.711989      0.006447        0.344333       0.012373     0.541246    0.032592 0.420791 0.018428        4
+Best C by mean defective F1: 0.1
+Changes versus C=1 (best minus current):
+mean_accuracy    +0.003675
+mean_precision   +0.003853
+mean_recall      -0.002374
+mean_f1          +0.002104
+Selection metric is defective F1; recall is reported separately for product review.
+refit=False: 25 CV fits; no selected model refit, promotion, or default change.
+Final test outputs discarded; not inspected, fitted, predicted, or scored.

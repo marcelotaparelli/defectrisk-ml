@@ -1,0 +1,4 @@
+,average_precision
+balanced_logistic_regression,0.3928925082546084
+weighted_random_forest,0.3854322644738817
+hist_gradient_boosting,0.38765557229466263

@@ -1,0 +1,92 @@
+{
+  "source_sha256": {
+    "docs/tree-model-tuning-results/oof-probabilities.csv": "0a852fbbf25fbbeb6356aaee84898cd9d60427d2d15847b031da5db75a740bd2",
+    "docs/final-model-challenge-results/oof-probabilities.csv": "69680315c9c6ad82770c7a809edf0998148fcbf0d5ddc92ebfcf4e74bf87f29a",
+    "docs/calibration-and-uncertainty-results/oof-probabilities.csv": "294a2572f87a64faae280b56b0569ffad2f66a1c16a5e0a4c83f3bfe8918b217",
+    "docs/calibration-and-uncertainty-results/reliability-bins.csv": "0d69bef238aa3cbec0b3903ae853aba942ea7ff05217ead26dfcdcd078605128",
+    "docs/calibration-and-uncertainty-results/audits.csv": "ee3080521549bd1913c591801360a951ff2d91b19f19580ef2d286868ebf572f",
+    "docs/tree-model-tuning-results/audits.csv": "0bf29939dfa427d9a2758c48124f4217c36928e766482d09e589ac5c680d6dd1",
+    "docs/final-model-challenge-results/audits.csv": "0bf29939dfa427d9a2758c48124f4217c36928e766482d09e589ac5c680d6dd1"
+  },
+  "cv_population": {
+    "rows": 8708,
+    "defective": 1685,
+    "outer_folds": 5,
+    "nested_tree_inner_folds": 3,
+    "description": "Pooled training OOF; fixed LR, inner-selected RF/HGB/XGB procedures"
+  },
+  "cv_review30": {
+    "lr": {
+      "precision": 0.34686064318529863,
+      "recall": 0.5376854599406529,
+      "f1": 0.42168955084942983,
+      "accuracy": 0.7146302250803859,
+      "tp": 906.0,
+      "fp": 1706.0,
+      "tn": 5317.0,
+      "fn": 779.0,
+      "flagged_modules": 2612.0,
+      "flagged_percent": 29.99540652273771,
+      "average_precision": 0.3928925082546084
+    },
+    "rf": {
+      "precision": 0.36485451761102605,
+      "recall": 0.5655786350148369,
+      "f1": 0.4435652781010007,
+      "accuracy": 0.7254248966467616,
+      "tp": 953.0,
+      "fp": 1659.0,
+      "tn": 5364.0,
+      "fn": 732.0,
+      "flagged_modules": 2612.0,
+      "flagged_percent": 29.99540652273771,
+      "average_precision": 0.40221115968618415
+    },
+    "hgb": {
+      "precision": 0.361791730474732,
+      "recall": 0.5608308605341247,
+      "f1": 0.4398417500581801,
+      "accuracy": 0.7235875057418466,
+      "tp": 945.0,
+      "fp": 1667.0,
+      "tn": 5356.0,
+      "fn": 740.0,
+      "flagged_modules": 2612.0,
+      "flagged_percent": 29.99540652273771,
+      "average_precision": 0.4050802719554499
+    },
+    "xgb": {
+      "precision": 0.3545176110260337,
+      "recall": 0.5495548961424332,
+      "f1": 0.43099837095648125,
+      "accuracy": 0.7192237023426734,
+      "tp": 926.0,
+      "fp": 1686.0,
+      "tn": 5337.0,
+      "fn": 759.0,
+      "flagged_modules": 2612.0,
+      "flagged_percent": 29.99540652273771,
+      "average_precision": 0.40240877290862626
+    }
+  },
+  "historical_held_out": {
+    "population": "Historical once-only held-out / frozen raw RF",
+    "modules": 2177,
+    "defective": 421,
+    "flagged": 652,
+    "flagged_percent": 29.95,
+    "recall": 0.7126,
+    "precision": 0.4601,
+    "f1": 0.5592,
+    "average_precision": 0.6553,
+    "tp": 300,
+    "fp": 352,
+    "tn": 1404,
+    "fn": 121,
+    "calibrated_system": false,
+    "new_evaluation": false,
+    "statement": "This held-out test was evaluated once after model selection was frozen."
+  },
+  "new_model_fits": 0,
+  "historical_test_prediction_files_accessed": false
+}

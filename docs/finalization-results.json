@@ -1,0 +1,79 @@
+{
+  "selected_model": "Tuned weighted Random Forest + training-only sigmoid calibration",
+  "model_version": "defectrisk-rf-sigmoid-v1",
+  "positioning": "Risk ranking / human review prioritization, not automatic defect certainty",
+  "new_algorithms_or_searches": 0,
+  "full_training_artifact_fits": {
+    "calibration_oof_rf": 3,
+    "full_m3_rf": 1
+  },
+  "historical_held_out_evaluation_rerun": false,
+  "historical_test_prediction_files_accessed": false,
+  "tests": {
+    "command": "python -m pytest -q",
+    "passed": 212,
+    "seconds": 24.95,
+    "complete_suite": true
+  },
+  "execution_environment": "Standalone Python 3.14.8 with existing workspace site-packages; .venv executable symlinks are broken",
+  "artifact_checksums": {
+    "model.joblib": "b076c27882d9b12c235a6eb3dffd84b62e5c51b47d2d796132ecd0fe735e40ff",
+    "metadata.json": "b6acd1c9803c8cb3c1807fb41425083e2049c1af8386d89de6868331f5c4018e",
+    "calibration-audits.csv": "681d94aa653bd621e20bfe237cf39d387fc31aa10c430e41fb0427924b54751f"
+  },
+  "figures": {
+    "count": 6,
+    "formats": [
+      "svg",
+      "png",
+      "pdf"
+    ],
+    "source": "Saved training-only OOF/calibration bins and user-supplied archived held-out aggregate counts"
+  },
+  "created_files": [
+    "docs/model-card.md",
+    "docs/portfolio-case.md",
+    "docs/article-data-quality.md",
+    "docs/finalization-results.json",
+    "src/defectrisk/model_spec.py",
+    "src/defectrisk/final_artifact.py",
+    "src/defectrisk/portfolio_evidence.py",
+    "tests/test_final_artifact.py",
+    "tests/test_portfolio_evidence.py",
+    "requirements-repro.txt",
+    "docs/figures/calibration-reliability-cv.pdf",
+    "docs/figures/calibration-reliability-cv.png",
+    "docs/figures/calibration-reliability-cv.svg",
+    "docs/figures/evidence.json",
+    "docs/figures/hero-held-out.pdf",
+    "docs/figures/hero-held-out.png",
+    "docs/figures/hero-held-out.svg",
+    "docs/figures/historical-confusion-matrix.pdf",
+    "docs/figures/historical-confusion-matrix.png",
+    "docs/figures/historical-confusion-matrix.svg",
+    "docs/figures/model-comparison-cv.pdf",
+    "docs/figures/model-comparison-cv.png",
+    "docs/figures/model-comparison-cv.svg",
+    "docs/figures/precision-recall-cv.pdf",
+    "docs/figures/precision-recall-cv.png",
+    "docs/figures/precision-recall-cv.svg",
+    "docs/figures/review-effort-recall-cv.pdf",
+    "docs/figures/review-effort-recall-cv.png",
+    "docs/figures/review-effort-recall-cv.svg",
+    "artifacts/rf-sigmoid-v1/calibration-audits.csv",
+    "artifacts/rf-sigmoid-v1/checksums.json",
+    "artifacts/rf-sigmoid-v1/metadata.json",
+    "artifacts/rf-sigmoid-v1/model.joblib"
+  ],
+  "changed_files": [
+    "README.md",
+    "pyproject.toml",
+    "src/defectrisk/calibration_uncertainty.py",
+    "docs/dataset-report.md"
+  ],
+  "unresolved_limits": [
+    "No external independent validation of calibrated/policy system",
+    "Static-feature/snapshot/label limits; high-confidence automation unsupported",
+    "Recorded versions/platform required; seed alone is insufficient"
+  ]
+}

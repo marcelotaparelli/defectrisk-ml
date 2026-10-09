@@ -1,0 +1,26 @@
+Logistic Regression baseline — training-side validation only
+Positive class: 'true' (defective); negative class: 'false' (clean)
+Validation split: group-aware, test_size=0.20, random_state=42
+M3 training rows: 8,708
+Fit rows: 6,966; validation rows: 1,742
+Shared feature vectors (fit/validation): 0
+Fit class distribution:
+         count  percent
+defects                
+false     5618    80.65
+true      1348    19.35
+Validation class distribution:
+         count  percent
+defects                
+false     1405    80.65
+true       337    19.35
+Accuracy: 0.8203
+Precision (defective): 0.8000
+Recall (defective): 0.0950
+F1 (defective): 0.1698
+Confusion matrix (rows=actual, columns=predicted; [[TN, FP], [FN, TP]]):
+                  predicted clean  predicted defective
+actual clean                 1397                    8
+actual defective              305                   32
+Undefined precision/recall/F1 are reported as 0 (zero_division=0).
+The final test set was not fitted, scored, or used for decisions.
