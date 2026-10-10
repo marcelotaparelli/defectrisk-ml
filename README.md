@@ -25,6 +25,8 @@ RANK  MODULE          RISK
 
 Real frozen-artifact inference on synthetic examples. Scores are estimated defect risk, not certainty; they do not certify modules clean or defective.
 
+DefectRisk ranks risk rather than classifying at a 0.50 cutoff. With JM1's ~19% defect prevalence, a ~47% calibrated risk is substantially above baseline and useful for prioritization; ranking position is the primary operational signal.
+
 **Technical credibility:**
 
 - Leakage-safe evaluation with identical feature vectors kept together.
